@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ApnaJeet - Esports Tournaments & Gaming Rewards</title>
+
+  <meta name="description" content="Discover esports tournaments, gaming tasks, redeem rewards and competitive gaming features with ApnaJeet. Download the app and explore.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090b12">
+
+  <!-- Replace with your actual GitHub Pages URL -->
+  <link rel="canonical"
+        href="https://YOUR-USERNAME.github.io/Apnajeet-esports-app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="ApnaJeet - Esports Tournaments">
+  <meta property="og:description"
+        content="Explore gaming tournaments, tasks and rewards with ApnaJeet.">
+  <meta property="og:url"
+        content="https://YOUR-USERNAME.github.io/Apnajeet-esports-app/">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b12;
+      --panel: #111522;
+      --text: #f5f7ff;
+      --muted: #a8b0c5;
+      --accent: #a3ff12;
+      --border: #252b3b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #090b12;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 100px 0 85px;
+      background:
+        radial-gradient(ellipse at 85% 10%,
+        #253517 0%, transparent 45%);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 780px;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      color: #10140a;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .card .number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .card p, .muted {
+      color: var(--muted);
+    }
+
+    .download {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px;
+    }
+
+    .faq {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+
+    .faq h3 {
+      font-size: 17px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .download {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container" aria-label="Main navigation">
+    <a class="logo" href="#home" style="text-decoration:none">
+      APNA<span>JEET</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#tournaments">Tournaments</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow">Your Gaming Community</div>
+
+      <h1>
+        Play. Compete.<br>
+        <span>Discover More.</span>
+      </h1>
+
+      <p>
+        Welcome to ApnaJeet, an esports and gaming platform
+        where players can discover tournaments, explore daily
+        tasks and learn about available rewards.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
+           target="_blank" rel="noopener noreferrer">
+          Get the App →
+        </a>
+
+        <a class="btn" href="#features">
+          Explore Features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="eyebrow">What We Offer</div>
+      <h2>Built for Gaming Enthusiasts</h2>
+
+      <p class="intro">
+        Explore the features available on ApnaJeet and discover
+        new ways to participate in the gaming community.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="number">01 / COMPETE</div>
+          <h3>Esports Tournaments</h3>
+          <p>
+            Explore tournament announcements, match information
+            and participation rules through the app.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">02 / PARTICIPATE</div>
+          <h3>Daily Tasks</h3>
+          <p>
+            Check available tasks in the app, follow their
+            instructions and review the applicable requirements.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">03 / DISCOVER</div>
+          <h3>Rewards & Redeem Codes</h3>
+          <p>
+            Discover reward opportunities and check the terms,
+            eligibility and availability of each offer.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tournaments">
+    <div class="container">
+      <div class="eyebrow">Competitive Gaming</div>
+      <h2>Discover Your Next Match</h2>
+
+      <p class="intro">
+        Stay informed about tournament announcements, registration
+        deadlines, match formats and room details published
+        through ApnaJeet. Always check the latest rules before joining.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
+           target="_blank" rel="noopener noreferrer">
+          Explore ApnaJeet
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rewards">
+    <div class="container">
+      <div class="download">
+        <div class="eyebrow">Tasks & Rewards</div>
+        <h2>Explore Available Opportunities</h2>
+
+        <p class="muted">
+          Check the app for current tasks, reward conditions,
+          redeem code announcements and eligibility requirements.
+          Offers may vary and are subject to their published terms.
+        </p>
+
+        <a class="btn btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
+           target="_blank" rel="noopener noreferrer">
+          Visit Google Play →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="eyebrow">Need to Know</div>
+      <h2>Frequently Asked Questions</h2>
+
+      <article class="faq">
+        <h3>What is ApnaJeet?</h3>
+        <p class="muted">
+          ApnaJeet is an esports and gaming platform that offers
+          access to tournament information, tasks and reward-related
+          features.
+        </p>
+      </article>
+
+      <article class="faq">
+        <h3>How can I join a tournament?</h3>
+        <p class="muted">
+          Open the app, review the available tournament details,
+          check eligibility and follow the published registration
+          and match instructions.
+        </p>
+      </article>
+
+      <article class="faq">
+        <h3>Are rewards guaranteed?</h3>
+        <p class="muted">
+          No. Rewards depend on the particular offer, eligibility,
+          completion requirements and applicable terms. Check
+          the details inside the app.
+        </p>
+      </article>
+
+      <article class="faq">
+        <h3>Where can I download ApnaJeet?</h3>
+        <p class="muted">
+          Visit the official Google Play listing using the
+          download link on this website.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <a class="logo" href="#home" style="text-decoration:none">
+      APNA<span>JEET</span>
+    </a>
+
+    <p>
+      Discover esports, gaming tasks and tournament information.
+    </p>
+
+    <div class="footer-links">
+      <!-- Add your actual published policy URLs here -->
+      <a href="https://play.google.com/store/apps/details?id=com.appnajeet.user">
+        Google Play
+      </a>
+    </div>
+
+    <p>
+      ApnaJeet is an independent gaming platform and is not
+      affiliated with or endorsed by Garena or Free Fire.
+    </p>
+
+    <p>© 2026 ApnaJeet. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
