@@ -99,3 +99,6 @@ details p{margin:10px 0 0;color:var(--muted);font-size:15px}
 }
 @media(max-width:480px){.steps{grid-template-columns:1fr}.hero{padding:44px 0}.section{padding:52px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* logo image */
+img.logo{background:none;object-fit:cover;display:block}
