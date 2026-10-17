@@ -1,1334 +1,158 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta name="google-site-verification" content="jpPedcMtuwJY4m9AadztyciSGHEDHAPRClP9MBEF3rE" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>ApnaJeet – Free Tournament App & Instant Redeem Code Rewards</title>
-
-  <meta name="description" content="Discover ApnaJeet, a free tournament app with esports matches, daily tasks and instant redeem code rewards. After tournament proof is verified and approved, eligible rewards are typically added to My Rewards within 5 minutes.">
-
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#080a0d">
-
-  <link rel="canonical"
-    href="https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="ApnaJeet">
-  <meta property="og:title" content="ApnaJeet – Free Tournament App & Redeem Code Rewards">
-  <meta property="og:description"
-    content="Explore free gaming tournaments, daily tasks and instant redeem code rewards with ApnaJeet.">
-  <meta property="og:url"
-    content="https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ApnaJeet – Free Tournament App">
-  <meta name="twitter:description"
-    content="Explore gaming tournaments, daily tasks and redeem code rewards with ApnaJeet.">
-
-  <link rel="icon" href="favicon.ico">
-
-  <style>
-    :root {
-      --bg: #080a0d;
-      --surface: #101319;
-      --surface-2: #151a21;
-      --green: #c5ff36;
-      --green-dark: #9cd51e;
-      --white: #f6f7f2;
-      --muted: #929a9e;
-      --border: rgba(255,255,255,.09);
-      --radius: 18px;
-      --max: 1160px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--white);
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Arial, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--green);
-      outline-offset: 4px;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 44px));
-      margin-inline: auto;
-    }
-
-    .accent {
-      color: var(--green);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 23px;
-      height: 2px;
-      background: var(--green);
-    }
-
-    .section {
-      padding: 96px 0;
-    }
-
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 40px;
-    }
-
-    .section-heading h2 {
-      margin: 14px 0;
-      font-size: clamp(30px, 4.5vw, 48px);
-      line-height: 1.12;
-      letter-spacing: -1.8px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 590px;
-      margin: 0;
-    }
-
-    /* Navigation */
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(8,10,13,.91);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 37px;
-      height: 37px;
-      display: grid;
-      place-items: center;
-      background: var(--green);
-      color: #10140a;
-      font-weight: 1000;
-      font-size: 17px;
-      letter-spacing: -1px;
-      clip-path: polygon(24% 0,100% 0,100% 76%,76% 100%,0 100%,0 24%);
-    }
-
-    .brand-name {
-      font-size: 19px;
-      font-weight: 950;
-      letter-spacing: -.8px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-    }
-
-    .nav-links a {
-      color: #c0c4c3;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: color .2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    .nav-download {
-      padding: 10px 16px;
-      border-radius: 7px;
-      background: var(--green);
-      color: #10140a !important;
-      font-weight: 850 !important;
-    }
-
-    /* Buttons */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 49px;
-      padding: 12px 19px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s, background .2s, border-color .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #11150a;
-      background: var(--green);
-      border-color: var(--green);
-    }
-
-    .btn-primary:hover {
-      background: #d6ff79;
-    }
-
-    .btn-secondary {
-      color: var(--white);
-      background: rgba(255,255,255,.025);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--green);
-    }
-
-    /* Hero */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 92px 0 80px;
-      border-bottom: 1px solid var(--border);
-      background:
-        radial-gradient(ellipse at 80% 35%,
-          rgba(151,205,40,.12), transparent 38%),
-        radial-gradient(ellipse at 15% 80%,
-          rgba(48,66,40,.15), transparent 45%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: .19;
-      background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-      background-size: 45px 45px;
-      mask-image: linear-gradient(90deg, transparent, black);
-    }
-
-    .hero-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      max-width: 700px;
-      margin: 23px 0;
-      font-size: clamp(45px, 6.5vw, 77px);
-      line-height: .99;
-      letter-spacing: -4.5px;
-      font-weight: 950;
-    }
-
-    .hero h1 .outline {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--green);
-    }
-
-    .hero-copy {
-      max-width: 540px;
-      color: #a9b0b1;
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .hero-note {
-      margin-top: 24px;
-      color: #81898b;
-      font-size: 11px;
-    }
-
-    /* Original CSS-built hero artwork */
-
-    .arena {
-      position: relative;
-      min-height: 410px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid rgba(197,255,54,.19);
-      border-radius: 22px;
-      background:
-        radial-gradient(ellipse at 50% 50%,
-          rgba(167,224,49,.13), transparent 57%),
-        linear-gradient(145deg, #171d1d, #0c0f14 65%);
-    }
-
-    .arena::before {
-      content: "";
-      position: absolute;
-      width: 290px;
-      height: 290px;
-      border: 1px solid rgba(197,255,54,.19);
-      transform: rotate(45deg);
-    }
-
-    .arena::after {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(197,255,54,.12);
-      transform: rotate(45deg);
-    }
-
-    .arena-lines {
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        120deg,
-        transparent 0,
-        transparent 47px,
-        rgba(255,255,255,.025) 48px,
-        transparent 49px
-      );
-    }
-
-    .arena-symbol {
-      position: relative;
-      z-index: 2;
-      color: var(--green);
-      font-size: clamp(90px, 12vw, 145px);
-      line-height: 1;
-      font-weight: 1000;
-      letter-spacing: -12px;
-      text-shadow: 0 0 65px rgba(197,255,54,.17);
-    }
-
-    .arena-label {
-      position: absolute;
-      z-index: 3;
-      bottom: 22px;
-      left: 22px;
-      right: 22px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      font-weight: 800;
-    }
-
-    .arena-label span:last-child {
-      color: var(--green);
-    }
-
-    .floating-tag {
-      position: absolute;
-      z-index: 4;
-      padding: 9px 12px;
-      background: #171c1e;
-      border: 1px solid #343c30;
-      border-radius: 7px;
-      font-size: 11px;
-      font-weight: 800;
-      box-shadow: 0 12px 40px #0006;
-    }
-
-    .tag-one {
-      top: 40px;
-      right: 20px;
-    }
-
-    .tag-two {
-      bottom: 85px;
-      left: 16px;
-    }
-
-    /* Feature strip */
-
-    .feature-strip {
-      border-bottom: 1px solid var(--border);
-      background: #0c0f13;
-    }
-
-    .strip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .strip-item {
-      padding: 24px 20px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
-
-    .strip-item:last-child {
-      border-right: 0;
-    }
-
-    .strip-item strong {
-      display: block;
-      font-size: 13px;
-    }
-
-    .strip-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 3px;
-    }
-
-    /* Feature cards */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, #151a20, #0e1116);
-      transition: transform .25s, border-color .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(197,255,54,.4);
-    }
-
-    .card-number {
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .card-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      margin: 27px 0 20px;
-      color: var(--green);
-      background: rgba(197,255,54,.08);
-      border: 1px solid rgba(197,255,54,.17);
-      border-radius: 13px;
-      font-size: 25px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -.5px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.85;
-    }
-
-    .card-link {
-      display: inline-block;
-      margin-top: 21px;
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    /* Tournament section */
-
-    .tournament-section {
-      background: #0c0f13;
-      border-block: 1px solid var(--border);
-    }
-
-    .tournament-panel {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr .65fr;
-      gap: 35px;
-      align-items: center;
-      padding: 42px;
-      border: 1px solid rgba(197,255,54,.18);
-      border-radius: 20px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 90% 50%,
-          rgba(197,255,54,.09), transparent 48%),
-        #11151a;
-    }
-
-    .tournament-panel h2 {
-      margin: 16px 0;
-      font-size: clamp(29px, 4vw, 43px);
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-    }
-
-    .tournament-panel p {
-      max-width: 590px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .arena-badge {
-      display: grid;
-      place-items: center;
-      min-height: 185px;
-      border: 1px solid rgba(197,255,54,.2);
-      border-radius: 14px;
-      background: rgba(0,0,0,.18);
-    }
-
-    .arena-badge strong {
-      color: var(--green);
-      font-size: 62px;
-      line-height: 1;
-      letter-spacing: -5px;
-    }
-
-    .arena-badge span {
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
-
-    /* Rewards */
-
-    .rewards-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .rewards-grid h2 {
-      margin: 15px 0;
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.1;
-      letter-spacing: -1.7px;
-    }
-
-    .rewards-grid p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .reward-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .reward-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface);
-    }
-
-    .check {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 27px;
-      height: 27px;
-      color: var(--green);
-      border-radius: 8px;
-      background: rgba(197,255,54,.09);
-      font-weight: 900;
-    }
-
-    .reward-row h3 {
-      margin: 0 0 4px;
-      font-size: 14px;
-    }
-
-    .reward-row p {
-      margin: 0;
-      font-size: 12px;
-    }
-
-    /* Download CTA */
-
-    .download-section {
-      padding-top: 15px;
-      padding-bottom: 100px;
-    }
-
-    .download-box {
-      position: relative;
-      overflow: hidden;
-      padding: 56px 30px;
-      text-align: center;
-      border: 1px solid rgba(197,255,54,.24);
-      border-radius: 22px;
-      background:
-        radial-gradient(ellipse at 50% 0%,
-          rgba(197,255,54,.14), transparent 65%),
-        #11151a;
-    }
-
-    .download-box h2 {
-      max-width: 670px;
-      margin: 18px auto;
-      font-size: clamp(33px, 5vw, 52px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-    }
-
-    .download-box p {
-      max-width: 590px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .download-box .actions {
-      justify-content: center;
-    }
-
-    /* FAQ */
-
-    .faq-layout {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 60px;
-    }
-
-    .faq-layout h2 {
-      margin: 15px 0;
-      font-size: 39px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    details {
-      padding: 19px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    summary {
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      font-size: 14px;
-      font-weight: 750;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: "+";
-      color: var(--green);
-      font-size: 22px;
-      font-weight: 400;
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    details p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Footer */
-
-    .footer {
-      padding: 38px 0 24px;
-      background: #06080a;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: flex-start;
-      padding-bottom: 30px;
-    }
-
-    .footer-copy {
-      max-width: 380px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 19px;
-    }
-
-    .footer-links a {
-      color: #b6bdbb;
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: #727a7d;
-      font-size: 11px;
-    }
-
-    .footer-bottom p {
-      margin: 0;
-    }
-
-    @media (max-width: 850px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .arena {
-        min-height: 330px;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .tournament-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .arena-badge {
-        min-height: 140px;
-      }
-
-      .rewards-grid,
-      .faq-layout {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: calc(100% - 32px);
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-        gap: 13px;
-      }
-
-      .nav-links {
-        width: 100%;
-        gap: 17px;
-        flex-wrap: wrap;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .nav-download {
-        padding: 5px 8px;
-      }
-
-      .hero {
-        padding: 57px 0 48px;
-      }
-
-      .hero h1 {
-        font-size: clamp(43px, 12vw, 61px);
-        letter-spacing: -2.8px;
-      }
-
-      .hero-copy {
-        font-size: 14px;
-      }
-
-      .arena {
-        min-height: 290px;
-      }
-
-      .arena-symbol {
-        font-size: 105px;
-      }
-
-      .strip-item {
-        padding: 17px 5px;
-      }
-
-      .strip-item strong {
-        font-size: 11px;
-      }
-
-      .strip-item span {
-        font-size: 9px;
-      }
-
-      .section {
-        padding: 65px 0;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 24px;
-      }
-
-      .tournament-panel {
-        padding: 25px;
-      }
-
-      .download-section {
-        padding-bottom: 65px;
-      }
-
-      .download-box {
-        padding: 40px 20px;
-      }
-
-      .footer-top {
-        flex-direction: column;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ApnaJeet",
-    "url": "https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/",
-    "sameAs": [
-      "https://play.google.com/store/apps/details?id=com.appnajeet.user"
-    ]
-  }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="jpPedcMtuwJY4m9AadztyciSGHEDHAPRClP9MBEF3rE">
+<title>ApnaJeet – Free Fire Tournament App with Redeem Code Rewards</title>
+<meta name="description" content="ApnaJeet is a free esports tournament app. Join tournaments, complete daily tasks and collect redeem code rewards in My Rewards after your proof is verified.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#3b2ff0">
+<link rel="canonical" href="https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/">
+<link rel="icon" href="favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ApnaJeet">
+<meta property="og:title" content="ApnaJeet – Free Tournament App">
+<meta property="og:description" content="Join free esports tournaments and collect redeem code rewards with ApnaJeet.">
+<meta property="og:url" content="https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/">
+<meta property="og:image" content="https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ApnaJeet – Free Tournament App">
+<meta name="twitter:description" content="Join free esports tournaments and collect redeem code rewards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"ApnaJeet","url":"https://apnajeetfftmlabs.github.io/Apnajeet-esports-app/","sameAs":["https://play.google.com/store/apps/details?id=com.appnajeet.user"]},
+{"@type":"MobileApplication","name":"ApnaJeet","operatingSystem":"ANDROID","applicationCategory":"GameApplication","downloadUrl":"https://play.google.com/store/apps/details?id=com.appnajeet.user","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is ApnaJeet free?","acceptedAnswer":{"@type":"Answer","text":"Yes. ApnaJeet is free to download from Google Play. Individual tournaments and tasks list their own rules and eligibility in the app."}},
+{"@type":"Question","name":"How do redeem code rewards work?","acceptedAnswer":{"@type":"Answer","text":"Play an eligible tournament and submit the required screenshot. After it is verified and approved, the reward is typically added to My Rewards within 5 minutes, where you can copy the code."}}]}]}
+</script>
 </head>
-
 <body>
 
 <header class="header">
-  <nav class="nav container" aria-label="Main navigation">
-
-    <a class="brand" href="#home" aria-label="ApnaJeet home">
-      <span class="brand-mark">AJ</span>
-      <span class="brand-name">APNA<span class="accent">JEET</span></span>
-    </a>
-
-    <div class="nav-links">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#home"><span class="logo">AJ</span>ApnaJeet</a>
+    <div class="links">
       <a href="#features">Features</a>
-      <a href="#tournaments">Tournaments</a>
-      <a href="#rewards">Rewards</a>
-      <a href="#faq">FAQs</a>
-      <a class="nav-download"
-         href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-         target="_blank" rel="noopener noreferrer">
-        Get App ↗
-      </a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-p" href="https://play.google.com/store/apps/details?id=com.appnajeet.user" target="_blank" rel="noopener noreferrer">Get the app</a>
     </div>
-
   </nav>
 </header>
 
-<main>
+<main id="home">
 
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-
-      <div>
-        <div class="eyebrow">Your gaming community</div>
-
-        <h1>
-          PLAY YOUR<br>
-          GAME.<br>
-          <span class="outline">OWN YOUR</span><br>
-          ARENA.
-        </h1>
-
-        <p class="hero-copy">
-          Step into ApnaJeet — a free tournament app to explore esports matches,
-          discover daily gaming tasks and find instant redeem code rewards
-          through eligible offers and verified tournament submissions.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary"
-             href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-             target="_blank" rel="noopener noreferrer">
-            Explore the App <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="btn btn-secondary" href="#features">
-            Discover Features <span aria-hidden="true">↓</span>
-          </a>
-        </div>
-
-        <p class="hero-note">
-          ESPORTS · GAMING · COMMUNITY
-        </p>
-      </div>
-
-      <div class="arena" aria-label="ApnaJeet esports graphic">
-        <div class="arena-lines"></div>
-
-        <div class="floating-tag tag-one">
-          <span class="accent">◆</span> GAME ON
-        </div>
-
-        <div class="arena-symbol" aria-hidden="true">AJ</div>
-
-        <div class="floating-tag tag-two">
-          BUILT FOR GAMERS
-        </div>
-
-        <div class="arena-label">
-          <span>APNAJEET ESPORTS</span>
-          <span>PLAY YOUR WAY ↗</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- BRAND PILLARS -->
-
-  <section class="feature-strip" aria-label="Platform highlights">
-    <div class="container strip-grid">
-
-      <div class="strip-item">
-        <strong>COMPETE</strong>
-        <span>Explore tournaments</span>
-      </div>
-
-      <div class="strip-item">
-        <strong>PARTICIPATE</strong>
-        <span>Discover gaming tasks</span>
-      </div>
-
-      <div class="strip-item">
-        <strong>DISCOVER</strong>
-        <span>Explore reward offers</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-
-  <section class="section" id="features">
-    <div class="container">
-
-      <div class="section-heading">
-        <div class="eyebrow">The ApnaJeet experience</div>
-        <h2>MORE THAN JUST<br><span class="accent">A GAME.</span></h2>
-        <p>
-          A gaming-focused platform built around tournament
-          discovery, participation and reward-related features.
-          Everything starts with exploring what's available.
-        </p>
-      </div>
-
-      <div class="cards">
-
-        <article class="card">
-          <div class="card-number">01 / COMPETE</div>
-          <div class="card-icon" aria-hidden="true">⌁</div>
-          <h3>Esports Tournaments</h3>
-          <p>
-            Discover tournament announcements, match formats,
-            registration details and participation rules
-            published through the app.
-          </p>
-          <a class="card-link" href="#tournaments">
-            Explore tournaments ↗
-          </a>
-        </article>
-
-        <article class="card">
-          <div class="card-number">02 / PARTICIPATE</div>
-          <div class="card-icon" aria-hidden="true">✓</div>
-          <h3>Daily Gaming Tasks</h3>
-          <p>
-            Check available tasks, understand their requirements
-            and follow the instructions provided in the app.
-          </p>
-          <a class="card-link" href="#rewards">
-            Discover tasks ↗
-          </a>
-        </article>
-
-        <article class="card">
-          <div class="card-number">03 / DISCOVER</div>
-          <div class="card-icon" aria-hidden="true">◇</div>
-          <h3>Instant Redeem Code Rewards</h3>
-          <p>
-            Complete an eligible tournament and submit your required screenshot.
-            After verification and approval, the reward is typically added to
-            My Rewards within 5 minutes, where you can copy the redeem code.
-          </p>
-          <a class="card-link" href="#rewards">
-            Learn about rewards ↗
-          </a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TOURNAMENTS -->
-
-  <section class="section tournament-section" id="tournaments">
-    <div class="container">
-
-      <div class="tournament-panel">
-
-        <div>
-          <div class="eyebrow">Enter the arena</div>
-
-          <h2>
-            YOUR NEXT<br>
-            <span class="accent">MATCH STARTS HERE.</span>
-          </h2>
-
-          <p>
-            Looking for gaming tournaments? Explore ApnaJeet
-            for published match information, registration
-            instructions and tournament rules.
-            Availability and eligibility vary by event.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary"
-               href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-               target="_blank" rel="noopener noreferrer">
-              Explore ApnaJeet ↗
-            </a>
-          </div>
-        </div>
-
-        <div class="arena-badge" aria-label="ApnaJeet brand emblem">
-          <strong>AJ</strong>
-          <span>READY. SET. COMPETE.</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TASKS AND REWARDS -->
-
-  <section class="section" id="rewards">
-    <div class="container rewards-grid">
-
-      <div>
-        <div class="eyebrow">Tasks & rewards</div>
-
-        <h2>
-          DISCOVER WHAT'S<br>
-          <span class="accent">AVAILABLE.</span>
-        </h2>
-
-        <p>
-          Explore daily tasks, free tournament opportunities and redeem code rewards
-          in ApnaJeet. After you complete an eligible tournament and submit the
-          required screenshot, your approved reward is typically added to My Rewards
-          within 5 minutes, ready to copy in the app.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary"
-             href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-             target="_blank" rel="noopener noreferrer">
-            View on Google Play ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="reward-list">
-        <p class="muted" style="grid-column: 1 / -1; margin: 0 0 4px; font-size: 13px;">
-          Searching for a free redeem code, free tournament app or instant redeem code app?
-          Explore eligible ApnaJeet tournaments and reward offers in the app.
-        </p>
-
-        <article class="reward-row">
-          <span class="check" aria-hidden="true">✓</span>
-          <div>
-            <h3>Explore Available Tasks</h3>
-            <p>
-              Review task instructions, completion requirements
-              and eligibility inside the app.
-            </p>
-          </div>
-        </article>
-
-        <article class="reward-row">
-          <span class="check" aria-hidden="true">✓</span>
-          <div>
-            <h3>Get Your Redeem Code in My Rewards</h3>
-            <p>
-              Once your tournament screenshot is verified and approved, the eligible
-              reward is typically added to My Rewards within 5 minutes. Copy your code
-              directly from the app.
-            </p>
-          </div>
-        </article>
-
-        <article class="reward-row">
-          <span class="check" aria-hidden="true">✓</span>
-          <div>
-            <h3>Follow Official Announcements</h3>
-            <p>
-              Check the app for current task details,
-              tournament updates and reward information.
-            </p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOAD CTA -->
-
-  <section class="container download-section">
-    <div class="download-box">
-
-      <div class="eyebrow">Join the community</div>
-
-      <h2>
-        READY TO LEVEL UP<br>
-        <span class="accent">YOUR GAME?</span>
-      </h2>
-
-      <p>
-        Discover ApnaJeet on Google Play and explore
-        its gaming features, tournaments and available tasks.
-      </p>
-
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Play tournaments. Collect rewards.</h1>
+      <p class="lead">ApnaJeet is a free esports app for Free Fire players. Join tournaments, finish daily tasks and copy your redeem codes from one place.</p>
       <div class="actions">
-        <a class="btn btn-primary"
-           href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-           target="_blank" rel="noopener noreferrer">
-          Get ApnaJeet on Google Play ↗
-        </a>
+        <a class="btn btn-p" href="https://play.google.com/store/apps/details?id=com.appnajeet.user" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+        <a class="btn" href="#how">See how it works</a>
       </div>
-
+      <ul class="trust">
+        <li>Free to download</li>
+        <li>Verified submissions</li>
+        <li>Android</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- FAQ -->
-
-  <section class="section" id="faq">
-    <div class="container faq-layout">
-
-      <div>
-        <div class="eyebrow">Got questions?</div>
-        <h2>LET'S CLEAR<br>THINGS UP.</h2>
-        <p class="muted">
-          Learn more about the platform before getting started.
-        </p>
-      </div>
-
-      <div>
-
-        <details>
-          <summary>What is ApnaJeet?</summary>
-          <p>
-            ApnaJeet is an esports and gaming platform where
-            users can explore tournament information, gaming
-            tasks and reward-related features.
-          </p>
-        </details>
-
-        <details>
-          <summary>How do I join a tournament?</summary>
-          <p>
-            Check the available tournament information in the
-            app, review eligibility and follow the event's
-            registration instructions and rules.
-          </p>
-        </details>
-
-        <details>
-          <summary>How do instant redeem code rewards work?</summary>
-          <p>
-            For eligible tournaments, complete the match and submit the required
-            screenshot as proof. After the submission is verified and approved,
-            the reward is typically added to My Rewards within 5 minutes. You can
-            copy the redeem code from there. Timing may depend on verification.
-          </p>
-        </details>
-
-        <details>
-          <summary>Which keywords describe ApnaJeet?</summary>
-          <p>
-            ApnaJeet is a free tournament app for gamers looking for gaming tournaments,
-            daily tasks, redeem code rewards and an instant redeem code app experience.
-            Reward eligibility and tournament rules apply.
-          </p>
-        </details>
-
-        <details>
-          <summary>Where can I download ApnaJeet?</summary>
-          <p>
-            Visit the official Google Play listing using
-            any of the download links on this page.
-          </p>
-        </details>
-
-      </div>
+    <div class="phone" role="img" aria-label="Preview of the My Rewards screen">
+      <h4>My Rewards</h4>
+      <div class="rw"><div><b>Redeem code</b><span class="s">Approved</span></div><i>Copy</i></div>
+      <div class="rw"><div><b>Redeem code</b><span class="s">Approved</span></div><i>Copy</i></div>
+      <div class="rw"><div><b>Screenshot under review</b><span class="muted">Usually a few minutes</span></div></div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="section alt" id="features">
+  <div class="wrap">
+    <div class="head">
+      <h2>Everything for your next match</h2>
+      <p>Tournament details, tasks and rewards are all inside the app.</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="ico" aria-hidden="true">&#9876;</div><h3>Esports tournaments</h3><p>See formats, registration steps and rules before you join. Availability varies by event.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#10003;</div><h3>Daily gaming tasks</h3><p>Check what each task needs, follow the instructions and track your progress.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#127873;</div><h3>Redeem code rewards</h3><p>Approved rewards appear in My Rewards. Copy your code straight from the app.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>How rewards work</h2>
+      <p>Four steps from match to redeem code.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Join</b><span>Pick an eligible tournament in the app.</span></li>
+      <li><b>Play</b><span>Complete the match as per the rules.</span></li>
+      <li><b>Submit proof</b><span>Upload the required screenshot.</span></li>
+      <li><b>Copy your code</b><span>After approval, it is typically added to My Rewards within 5 minutes.</span></li>
+    </ol>
+    <p class="note">Timing depends on verification. Eligibility and event rules apply. See our <a href="terms.html">Terms</a>.</p>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="head"><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details><summary>What is ApnaJeet?</summary><p>ApnaJeet is a gaming app where you can explore tournaments, daily tasks and reward features.</p></details>
+      <details><summary>Is ApnaJeet free?</summary><p>Yes, the app is free to download from Google Play. Each tournament or task shows its own rules and eligibility.</p></details>
+      <details><summary>How do I join a tournament?</summary><p>Open the tournament in the app, check eligibility and follow the registration steps.</p></details>
+      <details><summary>How do redeem code rewards work?</summary><p>Complete an eligible tournament and submit the required screenshot. After it is verified and approved, the reward is typically added to My Rewards within 5 minutes. Timing may vary.</p></details>
+      <details><summary>Is ApnaJeet linked to Garena or Free Fire?</summary><p>No. ApnaJeet is independent and is not affiliated with or endorsed by Garena or Free Fire.</p></details>
+      <details><summary>How do I contact support?</summary><p>Email us at <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Ready for your next match?</h2>
+      <p>Download ApnaJeet from Google Play and join a tournament today.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.appnajeet.user" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- FOOTER -->
-
 <footer class="footer">
-  <div class="container">
-
-    <div class="footer-top">
-
+  <div class="wrap">
+    <div class="f-grid">
       <div>
-        <a class="brand" href="#home">
-          <span class="brand-mark">AJ</span>
-          <span class="brand-name">APNA<span class="accent">JEET</span></span>
-        </a>
-
-        <p class="footer-copy">
-          A home for gaming enthusiasts to discover
-          esports tournaments, tasks and reward opportunities.
-        </p>
+        <a class="brand" href="#home"><span class="logo">AJ</span>ApnaJeet</a>
+        <p>A free esports app for tournaments, daily tasks and redeem code rewards.</p>
       </div>
-
-      <div class="footer-links">
+      <div>
+        <h5>Product</h5>
         <a href="#features">Features</a>
-        <a href="#tournaments">Tournaments</a>
-        <a href="#rewards">Rewards</a>
-        <a href="#faq">FAQs</a>
-        <a href="https://play.google.com/store/apps/details?id=com.appnajeet.user"
-           target="_blank" rel="noopener noreferrer">
-          Google Play ↗
-        </a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://play.google.com/store/apps/details?id=com.appnajeet.user" target="_blank" rel="noopener noreferrer">Google Play</a>
       </div>
-
+      <div>
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:YOUR-EMAIL@example.com">Contact</a>
+      </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 ApnaJeet. All rights reserved.</p>
-
-      <p>
-        ApnaJeet is independent and is not affiliated with
-        or endorsed by Garena or Free Fire.
-      </p>
+    <div class="legal">
+      <span>&copy; 2026 ApnaJeet. All rights reserved.</span>
+      <span>Not affiliated with or endorsed by Garena or Free Fire.</span>
     </div>
-
   </div>
 </footer>
 
